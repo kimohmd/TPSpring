@@ -26,9 +26,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceMonitor {
 
-	@AfterReturning("execution(* sample..*Service.*(..))")
-	public void logServiceAccess(JoinPoint joinPoint) {
-		System.out.println("Completed: " + joinPoint);
-	}
+//	@AfterReturning("execution(* sample..*Service.*(..))")
+//	public void logServiceAccess(JoinPoint joinPoint) {
+//		System.out.println("Completed: " + joinPoint);
+//	}
 
 }
