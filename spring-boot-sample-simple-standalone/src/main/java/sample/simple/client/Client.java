@@ -24,7 +24,7 @@ public class Client implements IRun, IClient{
 	@Override
 	public void run() {
 		justHaveALook.createArticles();
-		System.out.println(justHaveALook.getArticles().isEmpty());
+		
 		Produit article1 = new Produit("casquette", 25.5);
 		Produit article2 = new Produit("lunette", 55.5);
 		int quantiteArticle1 = 3;

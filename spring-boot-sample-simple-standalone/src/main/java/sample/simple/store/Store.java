@@ -31,7 +31,7 @@ public class Store implements IStore, IJastHaveALook, IFastLane, ILane{
 	public void pay(String debiteur, String crediteur, double montant) {
 		this.bank.transfetMoney(debiteur, crediteur, montant);
 		//this.articlesPanier.clear();
-		System.out.println("payement effectué");
+		
 		
 	}
 	@Override
