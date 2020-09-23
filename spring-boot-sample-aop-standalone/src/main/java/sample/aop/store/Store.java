@@ -28,17 +28,17 @@ public class Store implements IStore, IJastHaveALook, IFastLane, ILane{
 		
 	}
 	@Override
-	public void pay(String debiteur, String crediteur, double montant) {
-		this.bank.transfetMoney(debiteur, crediteur, montant);
+	public void pay(String debiteur, String crediteur, double montant, Boolean auth) {
+		this.bank.transfetMoney(debiteur, crediteur, montant, auth);
 		//this.articlesPanier.clear();
-		System.out.println("payement effectué");
+		
 		
 	}
 	@Override
-	public void oneShotOrder(Produit article, int quantite, String debiteur, String crediteur) {
+	public void oneShotOrder(Produit article, int quantite, String debiteur, String crediteur, Boolean auth) {
 		addItemToCart(article, quantite);
 		double montant = article.getPrix()*quantite;
-		pay(debiteur, crediteur, montant);
+		pay(debiteur, crediteur, montant, auth);
 		
 	}
 	@Override
