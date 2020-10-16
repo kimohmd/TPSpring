@@ -16,14 +16,30 @@
 
 package sample.data.jpa;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import sample.data.jpa.domain.Utilisateur;
+import sample.data.jpa.service.UtilisateurDao;
 
 @SpringBootApplication
 public class SampleDataJpaApplication {
-
+	private static final Logger log = LoggerFactory.getLogger(SampleDataJpaApplication.class);
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SampleDataJpaApplication.class, args);
+	}
+	
+	@Bean
+	public CommandLineRunner demo(UtilisateurDao utilisateurDao) {
+		return (args) -> {
+			// save a few customers
+			utilisateurDao.save(new Utilisateur("HA", "Abdel", "futur dev"));
+			utilisateurDao.save(new Utilisateur("HA", "Karim", "alternant"));
+		};
 	}
 
 }
